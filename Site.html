@@ -1,0 +1,189 @@
+<<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clean Comfort – Cleaning with Care</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+    header {
+      background-color: #6fbf73;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+    }
+    .cta-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: white;
+      color: #6fbf73;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #6fbf73;
+      margin-top: 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .testimonial {
+      font-style: italic;
+      margin: 10px 0;
+    }
+    .contact {
+      background-color: #e0f2e9;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .gallery img {
+  width: 250px;    /* or any size you want */
+  height: 200px;   /* optional: forces same height */
+  object-fit: cover; /* crops the image to fill box without stretching */
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+    section img {
+      width: 200px;
+      margin-right: 10px;
+      height: 300px;   /* optional: forces same height */
+  object-fit: cover; /* crops the image to fill box without stretching */
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      background-color: #f0f0f0;
+    } 
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clean Comfort</h1>
+    <p>Cleaning with Care in Vernon, Coldstream, Armstrong </p>
+      </header> 
+      <section>
+  <img src="images/before.jpg" alt="Before cleaning">
+  <img src="after.jpg" alt="After cleaning">
+  <img src="images/tools.jpg" alt="Cleaning tools">
+  <img src="images/tt.jpg" alt="Extra image">
+</section> <section>
+    <h2>Our Services</h2>
+    <ul>
+      <li>Regular House Cleaning</li>
+      <li>Deep Cleaning / Spring Cleaning</li>
+      <li>Window Cleaning</li>
+      <li>Post-Renovation Cleaning</li>
+      <li>One-Time Cleaning (before events, guests, or moving)</li>
+      <li>Professional rug cleaning</li>
+    </ul>
+  </section>  <section>
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>15+ years of experience</li>
+      <li>Fully equipped: vacuum, steam cleaner, eco mop</li>
+      <li>Eco-friendly, non-toxic products</li>
+      <li>Transparent pricing – $35/hour</li>
+      <li>Detail-oriented, respectful, and reliable</li>
+    </ul>
+  </section>  <section>
+    <h2>Areas We Serve</h2>
+    <p>Vernon, Coldstream, Armstrong, Predator Ridge</p>
+  </section>  <section>
+    <h2>Client Testimonials</h2>
+    <p class="testimonial">“The best cleaning service I’ve ever had! So thoughtful and detailed.” – Mary, Coldstream</p>
+    <p class="testimonial">“After our renovation, the house was spotless. Highly recommended!” – Alex, Vernon</p>
+  </section>  <section>
+      <section class="contact" id="contact">
+  <h2>Book our Cleaning</h2>
+ <form action="https://formspree.io/f/xrbqdlnp" method="POST">
+    <label for="name">Name:</label><br />
+    <input type="text" name="name" required /><br /><br />
+
+    <label for="email">Email:</label><br />
+    <input type="email" name="email" required /><br /><br />
+
+    <label for="cleaning-date">Preferred Cleaning Date:</label>
+    <input type="date" id="cleaning-date" name="cleaning-date" required><br /><br />
+
+    <label for="location">Your Location:</label>
+    <input type="text" id="location" name="location" required> <br /><br />
+
+    <label for="hours">How many hours of cleaning?</label>
+    <input type="number" id="hours" name="hours" min="1" max="12" required><br /><br />
+
+<label>Do you have pets at home?</label><br>
+<input type="radio" id="pets-yes" name="pets" value="Yes" required>
+<label for="pets-yes">Yes</label><br>
+
+<input type="radio" id="pets-no" name="pets" value="No">
+<label for="pets-no">No</label><br /><br />
+
+<label for="rooms">How many rooms need cleaning?</label><br>
+<input type="number" id="rooms" name="rooms" min="1" max="20" required><br><br>
+
+<label for="cleaningType">Type of Cleaning:</label><br>
+<select id="cleaningType" name="cleaningType" required>
+  <option value="">-- Select --</option>
+  <option value="regular">Regular House Cleaning</option>
+  <option value="deep">Deep Cleaning / Spring Cleaning</option>
+  <option value="window">Window Cleaning</option>
+  <option value="postRenovation">Post-Renovation Cleaning</option>
+  <option value="oneTime">One-Time Cleaning (event, move, etc.)</option>
+</select><br><br>
+
+    <label for="message">Additional Information:</label><br />
+    <textarea name="message" rows="5" required></textarea><br /><br />
+
+    <button class="cta-button" type="submit">Send Message</button>
+  </form>
+</section>
+    <section>
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+        <li><strong>What products do you use?</strong> We use eco-friendly, non-toxic cleaning products.</li>
+        <li><strong>How do I book a cleaning?</strong> Fill out the form above and click the “Send Message” button, or contact us directly by phone or email. We look forward to hearing from you!</li>
+        <li><strong>Do you provide your own cleaning supplies?</strong> Yes, we bring all necessary supplies and equipment.</li>
+        </ul>
+  </section>  <section class="contact">
+
+    <h2>Contact Us</h2>
+    <p><strong>Location:</strong> Vernon, BC</p>
+    <p><strong>Phone:</strong> +1 (250) 408-8198 </p>
+    <p><strong>Email:</strong> olhamular@email.com</p>
+    <p><strong>Hours:</strong> Monday–Saturday | 9:00 AM – 6:00 PM</p>
+    
+  </section>  <footer>
+    &copy; 2025 Clean Comfort – All rights reserved.
+  </footer>
+</body>
+</html>
