@@ -1,4 +1,4 @@
-<<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -146,24 +146,29 @@
   <h3>Leave a Comment</h3>
   <form id="comment-form">
     <div class="form-group">
-      <label>Comment</label>
-      <input type="text" name="comment" required />
-    </div>
-    <div class="form-group">
-      <label>Name</label>
-      <input type="text" name="name" required />
-    </div>
-    <div class="form-group">
-      <label>City</label>
-      <input type="text" name="city" required />
-    </div>
+  <label for="comment">Comment</label>
+  <input type="text" id="comment" name="comment" required />
+</div>
+<div class="form-group">
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" required />
+</div>
+<div class="form-group">
+  <label for="city">City</label>
+  <input type="text" id="city" name="city" required />
+</div>
     <button type="submit" class="submit">Submit</button>
   </form>
 </section>
 <script type="module">
   // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+import { 
+  getFirestore, 
+  collection, 
+  addDoc, 
+  getDocs 
+} from "https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -173,7 +178,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyBISYM_rmQWY1yh-5UlsHOLa3Zd1AMwQ7w",
   authDomain: "my-cleaning-97c38.firebaseapp.com",
   projectId: "my-cleaning-97c38",
-  storageBucket: "my-cleaning-97c38.firebasestorage.app",
+  storageBucket: "my-cleaning-97c38.appspot.com",
   messagingSenderId: "439695228860",
   appId: "1:439695228860:web:75b4d97a6d7feea07b35b9",
   measurementId: "G-TE1NBLF5B0"
@@ -181,9 +186,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  const db = getFirestore(app);
 
-const commentForm = document.querySelector("#comment-form");
+  const commentForm = document.querySelector("#comment-form");
   commentForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -220,51 +225,50 @@ const commentForm = document.querySelector("#comment-form");
   }
 
   fetchComments();
-
-</script>
+  </script>
   <section class="contact" id="contact">
   <h2>Book our Cleaning</h2>
  <form action="https://formspree.io/f/xrbqdlnp" method="POST">
-    <label for="name">Name:</label><br />
-    <input type="text" name="name" required /><br /><br />
+    <label for="book-name">Name:</label><br />
+    <input type="text" id="book-name" name="name" required /><br /><br />
 
     <label for="email">Email:</label><br />
-    <input type="email" name="email" required /><br /><br />
+    <input type="email" id="email" name="email" required /><br /><br />
 
     <label for="cleaning-date">Preferred Cleaning Date:</label>
     <input type="date" id="cleaning-date" name="cleaning-date" required><br /><br />
 
     <label for="location">Your Location:</label>
-    <input type="text" id="location" name="location" required> <br /><br />
+    <input type="text" id="location" name="location" required><br /><br />
 
     <label for="hours">How many hours of cleaning?</label>
     <input type="number" id="hours" name="hours" min="1" max="12" required><br /><br />
 
-<label>Do you have pets at home?</label><br>
-<input type="radio" id="pets-yes" name="pets" value="Yes" required>
-<label for="pets-yes">Yes</label><br>
+    <label>Do you have pets at home?</label><br>
+    <input type="radio" id="pets-yes" name="pets" value="Yes" required>
+    <label for="pets-yes">Yes</label><br>
 
-<input type="radio" id="pets-no" name="pets" value="No">
-<label for="pets-no">No</label><br /><br />
+    <input type="radio" id="pets-no" name="pets" value="No">
+    <label for="pets-no">No</label><br /><br />
 
-<label for="rooms">How many rooms need cleaning?</label><br>
-<input type="number" id="rooms" name="rooms" min="1" max="20" required><br><br>
+    <label for="rooms">How many rooms need cleaning?</label><br>
+    <input type="number" id="rooms" name="rooms" min="1" max="20" required><br><br>
 
-<label for="cleaningType">Type of Cleaning:</label><br>
-<select id="cleaningType" name="cleaningType" required>
-  <option value="">-- Select --</option>
-  <option value="regular">Regular House Cleaning</option>
-  <option value="deep">Deep Cleaning / Spring Cleaning</option>
-  <option value="window">Window Cleaning</option>
-  <option value="postRenovation">Post-Renovation Cleaning</option>
-  <option value="oneTime">One-Time Cleaning (event, move, etc.)</option>
-</select><br><br>
+    <label for="cleaningType">Type of Cleaning:</label><br>
+    <select id="cleaningType" name="cleaningType" required>
+      <option value="">-- Select --</option>
+      <option value="regular">Regular House Cleaning</option>
+      <option value="deep">Deep Cleaning / Spring Cleaning</option>
+      <option value="window">Window Cleaning</option>
+      <option value="postRenovation">Post-Renovation Cleaning</option>
+      <option value="oneTime">One-Time Cleaning (event, move, etc.)</option>
+    </select><br><br>
 
     <label for="message">Additional Information:</label><br />
-    <textarea name="message" rows="5" required></textarea><br /><br />
+    <textarea id="message" name="message" rows="5" required></textarea><br /><br />
 
     <button class="cta-button" type="submit">Send Message</button>
-  </form>
+    </form>
 </section>
     <section>
         <h2>Frequently Asked Questions</h2>
