@@ -2,21 +2,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> TruComfort Cleaning – Cleaning with Care</title>
+  <title>TruComfort Cleaning – Cleaning with Care</title>
+  <link rel="stylesheet" href="atyle.css" />
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Font-Variant, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      background-color: #f7f7f7;
+      background-color: #215732;
       color: #333;
     }
+    #intro{
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100vh;
+        background: #689550;
+        color:#c7e9c0;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        font-size:4rem;
+        z-index:1001;
+        font-family: Calligraphy; 
+        transition:opacity 1s ease;
+    }
     header {
-      background-color: #6fbf73;
-      color: white;
+      background-color: #215732;
+      color: #f7fcf5;
       padding: 40px 20px;
       text-align: center;
+      font-family: Font-Variant; 
+      position:fixed;
+      top:0;
+      left:0;
+
+      width:100%;
+
+      padding:20px;
+
+      z-index:1000;
+
     }
     header h1 {
       margin: 0;
@@ -35,29 +63,45 @@
       cursor: pointer;
       border-radius: 8px;
     }
+    .s{
+      margin-top: 10px;
+      padding: 12px 24px;
+      text-decoration:none;
+      color: #333333;
+      font-weight: bold;
+      font-style: normal;
+      border-radius: 5px;
+      font-size: larger;
+      
+    }
     section {
       padding: 40px 20px;
-      max-width: 900px;
+      /*max-width: 900px;*/
       margin: auto;
-      background-color: white;
+      background-color: #333333;
       margin-bottom: 20px;
       border-radius: 10px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     h2 {
-      color: #6fbf73;
+      color: white;
       margin-top: 0;
+      font-family: Font-Variant; 
+      font-size: 60px;
     }
     ul {
       padding-left: 20px;
+      color: #333333;
+      margin-top: 0;
+      font-family: Font-Variant; 
+      font-size: 35px;
+      text-align: left;
     }
     .testimonial {
       font-style: italic;
       margin: 10px 0;
     }
-    .contact {
-      background-color: #e0f2e9;
-    }
+   
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -98,26 +142,121 @@
       margin-top: 20px;
       padding: 12px 24px;
       background-color: white;
-      color: #6fbf73;
+      color: #333333;
       font-weight: bold;
       border: none;
       cursor: pointer;
       border-radius: 8px;
     }
+.slider{
+    width:700px;
+    height:400px;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,255,255,0.2);
+}
+
+/* ALL IMAGES */
+.slides{
+    display:flex;
+    width:300%;
+    animation:slide 12s infinite;
+}
+
+/* IMAGE STYLE */
+.slides img{
+    width:700px;
+    height: 500px;
+    object-fit:cover;
+}
+
+/* ANIMATION */
+@keyframes slide{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    30%{
+        transform:translateX(0);
+    }
+
+    35%{
+        transform:translateX(-700px);
+    }
+
+    65%{
+        transform:translateX(-700px);
+    }
+
+    70%{
+        transform:translateX(-1400px);
+    }
+
+    100%{
+        transform:translateX(-1400px);
+    }
+
+}
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>TruComfort Cleaning </h1>
-    <p>Cleaning with Care in Vernon, Coldstream, Armstrong </p>
-      </header> 
-      <section>
-  <img src="images/before.jpg" alt="Before cleaning">
-  <img src="after.jpg" alt="After cleaning">
-  <img src="images/tools.jpg" alt="Cleaning tools">
-  <img src="images/tt.jpg" alt="Extra image">
-</section> <section>
-    <h2>Our Services</h2>
+ <div id="intro">
+    <span id="typing"></span>
+</div>
+<header>
+  <div>
+      <h1>TruComfort Cleaning</h1>
+      <nav>
+        <a class="s", href="#home">Home</a>
+        <a class="s", href="#about">About</a>
+        <a class="s", href="#why">Why Choose Us</a>
+        <a class="s", href="#area">Area We Serve</a>
+        <a class="s", href="#test">Testimonials</a>
+        <a class="s", href="#cont">Book Your Clining</a>
+        <a class="s", href="#faq">FAQ</a>
+        <a class="s", href="#get">Contact Us</a>
+        
+    </nav>
+
+    </div>
+  </header>
+
+  <section  class="section hero">
+    <div class="container">
+      <h1 class="reveal">TruComfort Cleaning</h1>
+      <p class="reveal" style="color: #333333;">Cleaning with Care in Vernon, Coldstream and Armstrong </p>
+    </div>
+  </section>
+<script>
+
+const images = document.querySelectorAll('.image');
+
+window.addEventListener('scroll', reveal);
+
+function reveal(){
+
+    images.forEach(image => {
+
+        const windowHeight = window.innerHeight;
+        const imageTop = image.getBoundingClientRect().top;
+
+        if(imageTop < windowHeight - 100){
+            image.classList.add('show');
+        }
+
+    });
+
+}
+
+</script>
+<div class="custom-cursor", id="cc-dom"></div>
+<br id="about"><br>
+<section  class="section">
+  <div class="container">
+    <h2 class="reveal">Our Services</h2>
+   
     <ul>
       <li>Regular House Cleaning</li>
       <li>Deep Cleaning / Spring Cleaning</li>
@@ -126,40 +265,96 @@
       <li>One-Time Cleaning (before events, guests, or moving)</li>
       <li>Professional rug cleaning</li>
     </ul>
-  </section>  <section>
-    <h2>Why Choose Us?</h2>
-    <ul>
+    </div>
+   
+  </section> 
+  
+  <br id="why"><br><br>
+  <section  style="background-color: #333333;" class="section">
+  <div class="container" >
+    <h2 class="reveal" style=" color: white">Why Choose Us?</h2>
+    <ul style=" color: #a6a480">
       <li>15+ years of experience</li>
       <li>Fully equipped: vacuum, steam cleaner, eco mop</li>
       <li>Eco-friendly, non-toxic products</li>
-      <li>Transparent pricing </li>
+      <li>Transparent pricing – $35/hour</li>
       <li>Detail-oriented, respectful, and reliable</li>
     </ul>
-  </section>  <section>
-    <h2>Areas We Serve</h2>
-    <p>Vernon, Coldstream, Armstrong, Predator Ridge</p>
+    </div>
   </section> 
-   <section id="testimonials">
-  <h2>Client Testimonials</h2>
-  <div id="testimonials-list"></div>
+  
+  
+  <br id="area">
+ <section class="section">
+    <div class="container">
+      <h2 class="reveal">Areas We Serve</h2>
+      <p class="reveal" style="font-size: larger; color: #333333;">
+       Vernon, Coldstream, Armstrong and Predator Ridge </p>
+    </div>
+  </section>
 
-  <h3>Leave a Comment</h3>
+  <br id="test"><br>
+   <section class="section" id="testimonials">
+    <div class="container" style="text-align: left;">
+      <h2 class="reveal">Client Testimonials</h2>
+    <div id="testimonials-list"></div>
+<br><br>
+  <h3 style="font-size: 50px;">Leave a Comment</h3>
+  <br><br>
   <form id="comment-form">
     <div class="form-group">
-  <label for="comment">Comment</label>
-  <input type="text" id="comment" name="comment" required />
+  <label for="comment" style="font-size: 25px; ">Comment</label>
+  <input style="background-color: rgba(250, 235, 215, 0.279); border-radius: 4px; font-size: 25px;" id="comment" name="comment" required />
 </div>
 <div class="form-group">
-  <label for="name">Name</label>
-  <input type="text" id="name" name="name" required />
+  <label for="name" style="font-size: 25px; ">Name</label>
+  <input style="background-color: rgba(250, 235, 215, 0.415); border-radius: 4px; font-size: 25px" type="text" id="name" name="name" required />
 </div>
 <div class="form-group">
-  <label for="city">City</label>
-  <input type="text" id="city" name="city" required />
+  <label for="city" style="font-size: 25px; ">City</label>
+  <input style="background-color: rgba(250, 235, 215, 0.279); border-radius: 4px; font-size: 25px"type="text" id="city" name="city" required />
 </div>
     <button type="submit" class="submit">Submit</button>
   </form>
+  </div>
 </section>
+
+
+<script>
+    const text = "Olha Kikena";
+    const typingElement = document.getElementById("typing");
+
+    let index = 0;
+
+    function typeLetter() {
+        if(index < text.length){
+            typingElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeLetter, 150);
+        }
+        else{
+            // Wait a little after typing finishes
+            setTimeout(showWebsite, 1000);
+        }
+    }
+
+    function showWebsite(){
+        const intro = document.getElementById("intro");
+        const main = document.getElementById("main-content");
+
+        intro.style.opacity = "0";
+
+        setTimeout(() => {
+            intro.style.display = "none";
+            document.body.style.overflow = "auto";
+
+            main.style.opacity = "1";
+        }, 1000);
+    }
+
+    typeLetter();
+</script>
+
 <script type="module">
   // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
@@ -212,22 +407,85 @@ const app = initializeApp(firebaseConfig);
   });
 
   async function fetchComments() {
-    const querySnapshot = await getDocs(collection(db, "comments"));
-    const testimonialsContainer = document.querySelector("#testimonials-list");
-    testimonialsContainer.innerHTML = "";
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      const div = document.createElement("div");
-      div.classList.add("testimonial");
-      div.innerHTML = `<p>"${data.comment}"</p><p>- ${data.name}, ${data.city}</p>`;
-      testimonialsContainer.appendChild(div);
-    });
-  }
+
+console.log("✅ fetchComments() is running!");
+
+  const querySnapshot = await getDocs(collection(db, "comments"));
+  console.log(`✅ Number of comments fetched: ${querySnapshot.size}`);
+
+  const testimonialsContainer = document.querySelector("#testimonials-list");
+  console.log("✅ testimonialsContainer:", testimonialsContainer);
+
+  testimonialsContainer.innerHTML = "";
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    console.log("✅ Comment data:", data);
+
+    const div = document.createElement("div");
+    div.classList.add("testimonial");
+    div.innerHTML = `<p>"${data.comment}"</p><p>- ${data.name}, ${data.city}</p>`;
+    testimonialsContainer.appendChild(div);
+  });
+}
+
+   // const querySnapshot = await getDocs(collection(db, "comments"));
+   // const testimonialsContainer = document.querySelector("#testimonials-list");
+  //  testimonialsContainer.innerHTML = "";
+  //  querySnapshot.forEach((doc) => {
+  //    const data = doc.data();
+  //    const div = document.createElement("div");
+  //    div.classList.add("testimonial");
+   //   div.innerHTML = `<p>"${data.comment}"</p><p>- ${data.name}, ${data.city}</p>`;
+  //    testimonialsContainer.appendChild(div);
+  //  });
+ // }
 
   fetchComments();
+   const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  reveals.forEach(el => {
+    const rect = el.getBoundingClientRect();
+
+    if (rect.top < triggerBottom) {
+      el.classList.add("active");
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+const track = document.querySelector(".projects-track");
+const section = document.querySelector(".projects");
+
+window.addEventListener("scroll", () => {
+  const rect = section.getBoundingClientRect();
+  const scrollProgress = -rect.top / (rect.height - window.innerHeight);
+
+  const maxTranslate = track.scrollWidth - window.innerWidth;
+
+  if (scrollProgress >= 0 && scrollProgress <= 1) {
+    track.style.transform = `translateX(-${scrollProgress * maxTranslate}px)`;
+  }
+});
+const cursor = document.getElementById("cc-dom");
+
+document.addEventListener("mousemove", function(e) {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+});
   </script>
+  <br id="cont"><br>
+  <section class="section" style=" color: #a6a480; align-items: left;">
   <section class="contact" id="contact">
-  <h2>Book our Cleaning</h2>
+  
+      <div class="container" style=" color: #a6a480; text-align: left;">
+      <h2 class="reveal">Book our Cleaning</h2>
+
  <form action="https://formspree.io/f/xrbqdlnp" method="POST">
     <label for="book-name">Name:</label><br />
     <input type="text" id="book-name" name="name" required /><br /><br />
@@ -267,26 +525,70 @@ const app = initializeApp(firebaseConfig);
     <label for="message">Additional Information:</label><br />
     <textarea id="message" name="message" rows="5" required></textarea><br /><br />
 
-    <button class="cta-button" type="submit">Send Message</button>
+    <button style="color:#333333" class="cta-button" type="submit">Send Message</button>
     </form>
 </section>
-    <section>
-        <h2>Frequently Asked Questions</h2>
-        <ul>
-        <li><strong>What products do you use?</strong> We use eco-friendly, non-toxic cleaning products.</li>
-        <li><strong>How do I book a cleaning?</strong> Fill out the form above and click the “Send Message” button, or contact us directly by phone or email. We look forward to hearing from you!</li>
-        <li><strong>Do you provide your own cleaning supplies?</strong> Yes, we bring all necessary supplies and equipment.</li>
+</section>
+<br id="faq"><br>
+    <section class="section">
+    <div class="container">
+      <h2 class="reveal">Frequently Asked Questions</h2>
+      <p class="reveal">
+        
+        <ul style="color:#333333 ">
+        <li><strong>What products do you use?</strong><br> We use eco-friendly, non-toxic cleaning products.</li>
+        <li><strong>How do I book a cleaning?</strong><br> Fill out the form above and click the “Send Message” button, or contact us directly by phone or email. We look forward to hearing from you!</li>
+        <li><strong>Do you provide your own cleaning supplies?</strong> <br>Yes, we bring all necessary supplies and equipment.</li>
         </ul>
-  </section>  <section class="contact">
+        </p>
+        </div>
+  </section>  
+  <br id="get"><br>
+  <section class="contact" >
 
     <h2>Contact Us</h2>
-    <p><strong>Location:</strong> Vernon, BC</p>
-    <p><strong>Phone:</strong> +1 (250) 408-8198 </p>
-    <p><strong>Email:</strong> olhamular@email.com</p>
-    <p><strong>Hours:</strong> Monday–Saturday | 9:00 AM – 6:00 PM</p>
+    <p class="reveal" style="color:#a6a480"><strong>Location:</strong> Vernon, BC</p>
+    <p class="reveal" style="color:#a6a480"><strong>Phone:</strong> +1 (250) 408-8198 </p>
+    <p class="reveal" style="color:#a6a480"><strong>Email:</strong> olhamular@email.com</p>
+    <p class="reveal" style="color:#a6a480"><strong>Hours:</strong> Monday–Saturday | 9:00 AM – 6:00 PM</p>
     
-  </section>  <footer>
-    &copy; 2025 Clean Comfort – All rights reserved.
+  </section> 
+      
+  <section class="projects">
+
+  <div class="projects-sticky">
+    <div class="projects-track">
+
+      <div class="project panel">
+        <img src="images/i2.jpg" >
+      </div>
+
+      <div class="project panel">
+        <img src="images/i4.jpg" >
+      </div>
+
+      <div class="project panel">
+        <img src="images/i5.jpg" >
+      </div>
+
+      <div class="project panel">
+      <img src="images/i6.jpg" >
+      </div>
+
+       <div class="project panel">
+      <img src="images/i7.jpg" >
+    </div>
+
+    <div class="project panel">
+      <img src="images/i8.png" >
+    </div>
+
+    </div>
+  </div>
+
+</section>
+  <footer>
+    &copy; 2026 Clean Comfort – All rights reserved.
   </footer>
 </body>
 </html>
