@@ -488,19 +488,19 @@ document.addEventListener("mousemove", function(e) {
 
 <form action="https://formspree.io/f/xrbqdlnp" method="POST">
     <label for="book-name" style="font-size: 40px;" >Name:</label><br />
-    <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="text" id="book-name" name="name" required /><br /><br />
+    <input style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="text" id="book-name" name="name" required /><br /><br />
 
     <label for="email" style="font-size: 40px;">Email:</label><br />
-    <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="email" id="email" name="email" required /><br /><br />
+    <input style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="email" id="email" name="email" required /><br /><br />
 
     <label for="cleaning-date" style="font-size: 40px;">Preferred Cleaning Date:</label>
-    <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="date" id="cleaning-date" name="cleaning-date" required><br /><br />
+    <input style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="date" id="cleaning-date" name="cleaning-date" required><br /><br />
 
     <label for="location" style="font-size: 40px;">Your Location:</label>
-    <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="text" id="location" name="location" required><br /><br />
+    <input style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="text" id="location" name="location" required><br /><br />
 
     <label for="hours" style="font-size: 40px;">How many hours of cleaning?</label>
-    <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="number" id="hours" name="hours" min="1" max="12" required><br /><br />
+    <input style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="number" id="hours" name="hours" min="1" max="12" required><br /><br />
 
     <label style="font-size: 40px;">Do you have pets at home?</label><br>
     <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px; transform: scale(1.5);" type="radio" id="pets-yes" name="pets" value="Yes" required>
@@ -510,11 +510,11 @@ document.addEventListener("mousemove", function(e) {
     <label for="pets-no" style="font-size: 30px;">No</label><br /><br />
 
     <label for="rooms" style="font-size: 40px;">How many rooms need cleaning?</label><br>
-    <input style=" border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px;" type="number" id="rooms" name="rooms" min="1" max="20" required><br><br>
+    <input style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786); padding: 10px 20px; font-size: 30px;" type="number" id="rooms" name="rooms" min="1" max="20" required><br><br>
 
     <label for="cleaningType" style="font-size: 40px;">Type of Cleaning:</label><br>
-    <select style=" border: none; background-color: rgba(250, 235, 215, 0.786);" id="cleaningType" name="cleaningType" required>
-      <option style=" border: none; background-color: rgba(250, 235, 215, 0.786);" value="">-- Select --</option>
+    <select style="border-redius: 10px; border: none; background-color: rgba(250, 235, 215, 0.786);" id="cleaningType" name="cleaningType" required>
+      <option style=" border: none; background-color: rgba(250, 235, 215, 0.786); font-size: 30px;" value="">-- Select --</option>
       <option style=" border: none; background-color: rgba(250, 235, 215, 0.786);"value="regular">Regular House Cleaning</option>
       <option value="deep">Deep Cleaning / Spring Cleaning</option>
       <option value="window">Window Cleaning</option>
@@ -523,9 +523,17 @@ document.addEventListener("mousemove", function(e) {
     </select><br><br>
 
     <label  for="message" style="font-size: 40px;">Additional Information:</label><br />
-    <textarea style=" border: none; background-color: rgba(250, 235, 215, 0.786);" id="message" name="message" rows="5" required></textarea><br /><br />
+    <textarea style="border-redius: 10px;  border: none; background-color: rgba(250, 235, 215, 0.786);   width: 100%;          /* Fills the width of its parent container */
+  max-width: 600px;     /* Keeps it from getting too wide on desktop screens */
+  height: 150px;        /* Sets a generous default starting height */
+  padding: 12px;        /* Adds breathing room inside for the text */
+  font-size: 30px;      /* Ensures text is highly legible */
+  box-sizing: border-box; " id="message" name="message" rows="5" required></textarea><br /><br />
 
-    <button style="color:#fbfafa; background-color: #215732;" class="cta-button" type="submit">Send Message</button>
+    <button style="color:#fbfafa; background-color: #215732;  
+      font-size: 18px;         /* Makes the text larger and easier to read */
+  padding: 14px 28px;      /* Adds ample space inside (top/bottom, left/right) */
+  cursor: pointer;" class="cta-button" type="submit">Send Message</button>
     </form>
 </section>
 </section>
